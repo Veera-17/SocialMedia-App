@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Images ranking{% endblock %}
+{% block title %}Leard-Board{% endblock %}
 {% block content %}
-  <h1>Images ranking</h1>
+  <h1>Most Viewed Images</h1>
   <ol>
         {% for image in most_viewed %}
             <li>
@@ -10,5 +10,16 @@
                 </a>
             </li>
         {% endfor %}
+  </ol>
+
+  <h1>Most Liked Images</h1>
+  <ol>
+      {% for img in most_liked_img %}
+        <li>
+          <a href="{{ img.get_absolute_url }}">
+            {{ img.title }}
+          </a>
+        </li>
+      {% endfor %}
   </ol>
 {% endblock %}

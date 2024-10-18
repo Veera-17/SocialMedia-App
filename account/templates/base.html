@@ -19,6 +19,9 @@
       <li {% if section == "people" %}class="selected"{% endif %}>
         <a href="{% url 'user_list' %}">People</a>
       </li>
+      <li {% if section == "leard-board" %}class="selected"{% endif %}>
+        <a href="{% url 'images:ranking' %}">Leard-Board</a>
+      </li>
     </ul>
   {% endif %}
 

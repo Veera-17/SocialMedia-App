@@ -103,7 +103,12 @@ def image_ranking(request):
     # get most viewed images
     most_viewed = list(Image.objects.filter(id__in=image_ranking_ids))
     most_viewed.sort(key=lambda x: image_ranking_ids.index(x.id))
+    
+    # Getitng most liked Images
+    most_liked_img = Image.objects.all().order_by('-total_likes')
+    
     return render(request,
                   'images/image/ranking.html',
-                  {'section': 'images',
-                   'most_viewed': most_viewed})
+                  {'section': 'leard-board',
+                   'most_viewed': most_viewed,
+                   'most_liked_img': most_liked_img})
